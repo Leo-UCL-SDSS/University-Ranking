@@ -1,0 +1,439 @@
+---
+title: "U.S. News University Ranking"
+editor: visual
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    toc-location: left
+    code-fold: true
+    code-tools: true
+  revealjs: 
+    theme: [simple, custom.scss]
+---
+
+```{r}
+#| label: Preparation
+#| eval: false
+#| message: false
+#| warning: false
+#| include: false
+# Empty your environment by removing all objects
+rm(list = ls())
+
+# Setup: Install and load necessary packages for web scraping, data manipulation, and visualization
+if (!requireNamespace("pacman", quietly = TRUE)) install.packages("pacman")
+pacman::p_load(
+  RSelenium,  # For interacting with a web browser
+  rvest,      # For web scraping
+  purrr,      # For functional programming
+  dplyr,      # For data manipulation
+  ggplot2,    # For data visualization
+  plotly,     # For interactive plots
+  countrycode, # For country code conversions
+  shiny,      # For building interactive apps
+  stringr,    # For string manipulation
+  ggrepel,    # For improved text placement in ggplot2
+  leaflet,    # For mapping
+  tidygeocoder # For geocoding
+)
+
+```
+
+## Part I-A Automated Data Collection
+
+```{r}
+#| label: Web Scrape
+#| eval: false
+#| message: false
+#| warning: false
+#| include: false
+
+# Connecting to the Firefox browser via RSelenium
+driver <- rsDriver(browser = "firefox")  # Specify Firefox browser
+remote_driver <- driver$client
+
+# Navigating to the target URL to fetch the university rankings
+url <- "https://www.usnews.com/education/best-global-universities/rankings"
+remote_driver$navigate(url)
+
+# Handle cookie consent pop-up by clicking the consent button
+webElems <- remote_driver$findElements(using = "id", 'onetrust-accept-btn-handler')
+webElems[[1]]$clickElement()
+Sys.sleep(2)  # Wait for the page to load
+
+# Create a function to scroll the page and click "Load More" button to reveal more rankings
+scroll_and_load <- function(i) {
+  cat("Cycle", i, "of", 25, "\n")
+  
+  # Scroll down the page to load more content
+  remote_driver$executeScript('window.scrollTo(0, document.body.scrollHeight * 0.8);')
+  Sys.sleep(5)
+  
+  # Attempt to click the "Load More" button
+  tryCatch({
+    load_button <- remote_driver$findElement(using = "xpath", '//button[@rel="next"]//span')
+    load_button$clickElement()
+    cat("Load More button found. Clicking...\n")
+    Sys.sleep(5)
+  }, error = function(e) {
+    cat("No more 'Load More' button found. Exiting...\n")
+  })
+}
+
+# Use the map function to iterate over 25 cycles of scrolling and clicking the "Load More" button
+map(1:25, scroll_and_load)
+
+# Extract the necessary data elements from the webpage
+name <- remote_driver$findElements(using = "xpath", '//h2[@class="Heading-sc-1w5xk2o-0 erfdut md-mb2"]')
+country <- remote_driver$findElements(using = "xpath", '//p[@class="Paragraph-sc-1iyax29-0 fbFZrE"]/span[1]')
+city <- remote_driver$findElements(using = "xpath", '//p[@class="Paragraph-sc-1iyax29-0 fbFZrE"]/span[3]')
+rank <- remote_driver$findElements(using = "xpath", '//div[@class="RankList__Rank-sc-2xewen-2 ieuiBj ranked has-badge"]//strong')
+score_Enrollment <- remote_driver$findElements(using = "xpath", '//div[@class="Box-w0dun1-0 QuickStatHug__Container-hb1bl8-0 bcZeaE fkvuin QuickStatHug-hb1bl8-2 fyaies QuickStatHug-hb1bl8-2 fyaies"]//dd[1]')
+abstract <- remote_driver$findElements(using = "xpath", '//p[@class="Paragraph-sc-1iyax29-0 fBaaRL sm-hide"]')
+
+# Extract scores and enrollment details, handling alternate data elements
+score_Enrollment <- sapply(score_Enrollment, function(x) x$getElementText()[[1]])
+score <- score_Enrollment[seq(1, length(score_Enrollment), by = 2)]  # Odd indices for scores
+enrollment <- score_Enrollment[seq(2, length(score_Enrollment), by = 2)]  # Even indices for enrollment numbers
+
+# Create a tibble (data frame) to store the extracted information
+usNews_ranking <- tibble(
+  rank = sapply(rank, function(x) x$getElementText()[[1]]),
+  university = sapply(name, function(x) x$getElementText()[[1]]),
+  country = sapply(country, function(x) x$getElementText()[[1]]),
+  city = sapply(city, function(x) x$getElementText()[[1]]),
+  enrollment = enrollment,
+  score = score,
+  abstract = sapply(abstract, function(x) x$getElementText()[[1]])
+)
+
+#remote_driver$close()  # Close the remote driver
+#driver$server$stop()  # Stop the Selenium server
+```
+
+This study adopts a dynamic web-scraping method to explore the significance of university rankings through the U.S. News website, as API is not available. Using the Firefox browser, a remote driver object is created. Then, the `navigate` function from the RSelenium package directs the browser to the webpage using the assigned URL for the 2024-2025 global university ranking by U.S. News. Since the website requires users to accept or reject cookies, the accept button element is located by inspecting its ID, and the button is subsequently clicked using the Selenium package.
+
+Now, the ranking data can be scraped. The webpage includes the following information: the names of universities, ranks, locations, overall scores, and enrollment numbers. For certain universities, such as Harvard and MIT, a short abstract is also included, requiring a click on “Read More” to display the full message. Using the `findElement` function, the XPaths of elements such as name, rank, and abstract are identified to enable R to extract all the university information. By inspecting the class attribute of the HTML structure, R is able to fetch all the data associated with the class, such as `h2` for university names and `p` for abstracts.
+
+The website requires scrolling down to load all universities, and a specific “Load More” button, located near the bottom of the webpage (but not exactly at the bottom), needs to be clicked after a certain number of scrolls. The number of scrolls required appears to vary. To handle this, a JavaScript function `executeScript` is adopted to scroll the window to 80% of the page height, ensuring the “Load More” button is visible. This approach is derived from the YouTube tutorial referenced in the Week 6 lecture slides. To handle potential errors, such as when the “Load More” button fails to appear, a `tryCatch` function is employed. This function prints a success reminder if the button is successfully located and clicked or provides a failure message to inform the user otherwise.
+
+To scrape the maximum amount of data, a loop function is implemented to repeat the scrolling and loading process 25 times, which access sufficient data without over-loading the website. After completing 25 iterations, a substantial amount of university information is loaded onto the webpage, which can then be scraped using the identified XPaths as discussed earlier. Information from 220 universities is subsequently gathered. However, during multiple tests, the scrolling is still unstable in locating the button, as the location of the button varies, requiring adjustment in future study.
+
+As the collected data is in web element type, it must be transformed into text to create a table. A table, `usNews_ranking`, is created using the `tibble` function, which allows for flexible manipulation of columns. The rank data is transformed into text using both the `sapply` and `getElementText` functions, and the same method is applied to the remaining columns. Consequently, a table with nine variables and 220 observations is constructed.
+
+```{r}
+#| label: Data Wrangling
+#| eval: false
+#| message: false
+#| warning: false
+#| include: false
+
+# Clean and process enrollment data
+usNews_ranking$enrollment[usNews_ranking$enrollment == "N/A"] <- NA  # Replace "N/A" with NA
+usNews_ranking$enrollment <- gsub(",", "", usNews_ranking$enrollment)  # Remove commas in enrollment numbers
+
+# Clean the data: Convert character columns to appropriate data types
+usNews_ranking <- usNews_ranking %>%
+  as.data.frame() %>%
+  mutate_all(~ ifelse(. == "", NA, .)) %>%  # Replace empty strings with NA
+  mutate(
+    numeric_rank = as.numeric(gsub("#", "", rank)),  # Convert rank to numeric (remove "#" symbol)
+    score = as.numeric(score),  # Convert score to numeric
+    enrollment = as.numeric(enrollment),  # Convert enrollment to numeric
+    year_founded = as.numeric(str_extract(abstract, "\\d{4}"))  # Extract and convert year founded
+  )
+
+# Remove text within brackets (including brackets) from the 'city' column
+# The regular expression matches text inside parentheses and removes it
+usNews_ranking$city <- gsub("\\s*\\(.*?\\)", "", usNews_ranking$city)
+
+# Remove the last 20 rows from the dataset (if necessary to remove incomplete data)
+usNews_ranking <- usNews_ranking[1:(length(usNews_ranking$rank) - 20), ]
+
+# Geocode location to get latitude and longitude for each university
+usNews_ranking <- usNews_ranking %>%
+  mutate(location = paste(city, ",", country))  # Combine city and country to create a location field
+
+# Perform geocoding using OpenStreetMap (osm) to obtain coordinates for each location
+geo_data <- usNews_ranking %>%
+  distinct(location) %>%
+  geocode(location, method = "osm")
+
+# Merge geocode data back into the main dataset to add latitude and longitude information
+usNews_ranking <- usNews_ranking %>%
+  left_join(geo_data, by = "location")
+
+# Display a summary of the final dataset
+summary(usNews_ranking)
+
+# Save the cleaned data to a CSV file for later use
+write.csv(usNews_ranking, "usNews_ranking.csv", row.names = FALSE)
+
+```
+
+## Part I B-Data Exploration and Contextualisation
+
+The table is first converted to a data frame using the `as.data.frame` function, and variables such as rank, score, and year founded are treated as numeric. Specifically, the “#” symbol is removed to create the numeric rank data, and the year founded is extracted by identifying four-digit numbers within the abstract text. Missing values are assigned for any blank spaces, and the last 20 rows of the dataset are removed to create a table containing 200 universities for a clearer view of highest-quality instituions. Using the `mutate` function, a location variable is created by combining the city and country columns. Latitude and longitude coordinates for each university's location are added using a geocoding function with the OpenStreetMap (OSM) method. Finally, the dataset is saved as a CSV file to ensure reproducibility and further analysis.
+
+The `usNews_ranking` dataset contains 12 variables, each providing specific information about universities. Notably:
+
+::: nonincremental
+-   **rank**: University rank (#)
+-   **name**: University name
+-   **country**: Country of the university
+-   **city**: City of the university
+-   **enrollment**: Number of students enrolled
+-   **score**: Overall score assigned by U.S. News
+-   **abstract**: A brief introduction to the university
+-   **numeric_rank**: Numeric representation of the university's rank
+-   **year_founded**: Year the university was established
+-   **location**: University location in (city, country) format
+-   **lat** and **long**: Latitude and longitude of the university's city
+:::
+
+The variables `rank`, `name`, `country`, `city`, `enrollment`, `score`, and `abstract` are sourced directly from the U.S. News website. Among these, `score`, `enrollment`, `numeric_rank`, `year_founded`, `lat`, and `long` are numeric, while `rank`, `name`, `country`, `city`, `abstract`, and `location` are categorical.
+
+The original `rank` and `abstract` variables have been retained for potential use in Shiny outputs and further analysis. Additionally, the `lat` and `long` variables provide geographic coordinates for mapping purposes.
+
+The university ranking system is an important platform for students and their parents to choose their desired university by comparing its strengths and weaknesses. With complete information, such as location, rank, and enrollment, families can make an optimal decision based on economic status, cultural influence, and academic fit. Research demonstrates that university rankings provide more relevant information for prospective students, particularly regarding quality dimensions like mentoring, faculty infrastructure, and overall satisfaction, rather than research reputation (Horstschräer, 2012). Therefore, investigating global university rankings and their relationship with other information holds significant social value, helping society better understand the implications of a university's rank. In this study, data on the top 200 universities, demonstrating strong performance, are explicitly analyzed and interpreted.
+
+```{r}
+#| label: Shiny App
+#| eval: false
+#| message: false
+#| warning: false
+#| include: false
+
+library(shiny)
+library(ggplot2)
+library(dplyr)
+library(leaflet)
+library(ggrepel)
+
+# Load dataset
+usNews_ranking <- read.csv("usNews_ranking.csv")
+
+# UI
+ui <- fluidPage(
+  h1("University Ranking Dashboard"),
+  
+  tabsetPanel(
+    # Tab 1: Scatter Plot
+    tabPanel("Score vs Enrollment",
+             sidebarLayout(
+               sidebarPanel(
+                 selectInput(
+                   inputId = "country",
+                   label = "Select Country",
+                   choices = c("All", unique(usNews_ranking$country)),
+                   selected = "All"
+                 ),
+                 sliderInput(
+                   inputId = "rank_range",
+                   label = "Select Rank Range",
+                   min = min(usNews_ranking$numeric_rank),
+                   max = max(usNews_ranking$numeric_rank),
+                   value = c(1,30),
+                   step = 1
+                 )
+               ),
+               mainPanel(
+                 plotOutput("scatter_plot",height = "700px") # Amplify the graph
+               )
+             )
+            ),
+    
+    # Tab 2: Year Founded Plots
+    tabPanel("Year Founded Analysis",
+             sidebarLayout(
+               sidebarPanel(
+                 selectInput(
+                   inputId = "country",
+                   label = "Select Country",
+                   choices = c("All", unique(usNews_ranking$country)),
+                   selected = "All"
+                 ),
+                 
+                 sliderInput(
+                   inputId = "rank_range",
+                   label = "Select Rank Range",
+                   min = min(usNews_ranking$numeric_rank),
+                   max = max(usNews_ranking$numeric_rank),
+                   value = c(1,30),
+                   step = 1
+                 )
+               ),
+               mainPanel(
+                 plotOutput("year_rank_plot"),
+                 plotOutput("year_score_plot")
+               )
+             )),
+    
+    # Tab 3: Map View
+    tabPanel("Map View",
+             sidebarLayout(
+               sidebarPanel(
+                 selectInput(
+                   inputId = "country",
+                   label = "Select Country",
+                   choices = c("All", unique(usNews_ranking$country)), 
+                   selected = "All"
+                 ),
+                 
+                 # Region Dropdown - Automatically populated based on the selected country
+                 selectInput(
+                   inputId = "city",
+                   label = "Select City",
+                   choices = c("All", unique(usNews_ranking$city)),
+                   selected = "All"
+                 ),
+                 
+                 sliderInput(
+                   inputId = "rank_range",
+                   label = "Select Rank Range",
+                   min = min(usNews_ranking$numeric_rank),
+                   max = max(usNews_ranking$numeric_rank),
+                   value = c(1,30),
+                   step = 1
+                 )
+               ),
+               mainPanel(
+                 leafletOutput("map_output",height = "700px")
+               )
+             ))
+  )
+)
+
+# Server
+server <- function(input, output, session) {
+  
+  # Tab 1: Scatter Plot
+  output$scatter_plot <- renderPlot({
+    filtered_data <- usNews_ranking %>%
+      filter((input$country == "All" | country == input$country) &
+               numeric_rank >= input$rank_range[1] & 
+               numeric_rank <= input$rank_range[2])
+    
+    ggplot(filtered_data, aes(x = enrollment, y = score, color = country, size = numeric_rank, label = university)) +
+      geom_point(alpha = 0.7) +      
+      ggrepel::geom_text_repel(size = 2.5, max.overlaps = 100) +  # Add university names
+      scale_size_continuous(trans = "reverse") +  # Reverse the size scale
+      theme_minimal() +
+      labs(
+        title = "Score vs. Enrollment",
+        x = "Enrollment",
+        y = "Score",
+        color = "Country",
+        size = "Rank"
+      )
+  })
+  
+  # Tab 2: Year Founded Analysis
+  output$year_rank_plot <- renderPlot({
+    filtered_data <- usNews_ranking %>%
+      filter((input$country == "All" | country == input$country) &
+               numeric_rank >= input$rank_range[1] &
+               numeric_rank <= input$rank_range[2])
+    
+    ggplot(filtered_data, aes(x = year_founded, y = score, color = country)) +
+      geom_point(alpha = 0.7) +
+      theme_minimal() +
+      labs(
+        title = "Year Founded vs Score",
+        x = "Year Founded",
+        y = "Overall Score",
+        color = "Country"
+      ) +
+      theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  })
+  
+  # Plot for Year Founded vs Score
+  output$year_score_plot <- renderPlot({
+    filtered_data <- usNews_ranking %>%
+      filter((input$country == "All" | country == input$country) &
+               numeric_rank >= input$rank_range[1] &
+               numeric_rank <= input$rank_range[2])
+    
+    ggplot(filtered_data, aes(x = year_founded, y = enrollment, color = country)) +
+      geom_point(alpha = 0.7) +
+      theme_minimal() +
+      labs(
+        title = "Year Founded vs Enrollment",
+        x = "Year Founded",
+        y = "Enrollment",
+        color = "Country"
+      ) +
+      theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  })
+  
+  # Tab 3: Map View
+  output$map_output <- renderLeaflet({
+    # Filter the dataset based on selected country and city
+    filtered_data <- usNews_ranking %>%
+      filter((input$country == "All" | country == input$country) &
+               (input$city == "All" | city == input$city) &
+               numeric_rank >= input$rank_range[1] & 
+               numeric_rank <= input$rank_range[2])  # Apply rank filtering
+    
+    
+    # Aggregate information for overlapping points
+    aggregated_data <- filtered_data %>%
+      group_by(lat, long) %>%
+      summarise(
+        universities = paste(university, collapse = "; "),
+        rank_range = paste(min(rank), "-", max(rank)),
+        scores = paste(score, collapse = "; "),
+        enrollment_range = paste(min(enrollment), "-", max(enrollment)),
+        location = first(location),
+        .groups = "drop"
+      )
+    
+    # Create the map
+    leaflet(aggregated_data) %>%
+      addTiles() %>%
+      addCircleMarkers(
+        lat = ~lat,
+        lng = ~long,
+        radius = 5,
+        popup = ~paste(
+          "<strong>Universities:</strong><br/>", universities, "<br/><br/>",
+          "<strong>Rank Range:</strong> ", rank_range, "<br/>",
+          "<strong>Scores:</strong> ", scores, "<br/>",
+          "<strong>Enrollment Range:</strong> ", enrollment_range, "<br/>",
+          "<strong>Location:</strong> ", location
+        ),
+        color = "blue",
+        fillOpacity = 0.7
+      ) %>%
+      setView(lng = mean(filtered_data$long, na.rm = TRUE),
+              lat = mean(filtered_data$lat, na.rm = TRUE),
+              zoom = 2)
+  })
+}
+
+shinyApp(ui, server)
+
+```
+
+## Part II A-Building an Interactive Dashborad with R Shiny
+
+In this study, three visualizations are created to understand the global university rankings. The first visualization compares the overall score and enrollment size. In the UI section, users can select the country (All – Turkey) and the rank range (#1 - #199), with enrollment as the x-coordinate and score as the y-coordinate. The color represents different countries, and a larger spot signifies a higher-ranked university. Among the top 50 global universities, Harvard, MIT, and Stanford are outliers with scores of 100.0, 96.9, and 94.5, respectively. The mean and median of the overall scores for the top 200 universities are 73.06 and 71.90, indicating that the distribution of scores is right-skewed due to universities like the three mentioned above. The distribution of enrollment is also right-skewed, with a mean of 32,269 and a median of 32,078. There is a slight positive correlation between scores and enrollment, suggesting that a top 200 university with more students is likely to be considered more prestigious. However, this relationship does not hold at the country level, as some countries either lack sufficient universities to show a trend or exhibit a flat relationship between the two variables, warranting further statistical analysis like linear regression analysis.
+
+The second output explores the relationships between the year founded, rank, and enrollment using two scatter plots. The founding year ranges from 1088 to 1968, with a mean of 1772 and a median of 1853, showing a left-skewed distribution, influenced by low outliers. A slight positive correlation is found between the score and the year founded, with newly founded universities tending to have higher scores. Similarly, the graph shows a positive relationship between the year founded and enrollment, although the correlation is relatively small. Based on these trends, it is likely that universities with a longer history recruit fewer students and are considered less competitive in terms of scores.
+
+The final output shows the geographical distribution of universities using the OSM method. Based on the map, it is clear that the top 200 universities are mostly clustered in the United States, central and northern Europe, China, and Australia. Regarding the distribution of the top 50 universities, most are located in the United States, particularly along the West and East Coasts, as well as in central and northern Europe, reflecting their dominant academic environments and histories as developed Western countries. Additionally, China, one of the leading developing countries, exhibits a strong academic culture, with more universities in the top 200 list than any other developing country. A previous study argued that U.S. economic success can be attributed to a well-educated labor force, noting that the London-based Times Higher Education’s 2009 list of the top 10 universities included six American universities, while China still had a long way to go (Nye Jr., 2010). Fifteen years later, the trend remains persistent, though Chinese universities have significantly improved, laying a strong foundation for the labor force.     
+
+The report has adequately demonstrated the dominant academic performance in Western countries, while developing countries like China have also caught up in pace. Newly founded universities show strong and competitive academic performance in terms of rankings and large student enrollments, which diverges from that of historic universities. The quantitative benefits and graduate outcomes should be studied more specifically in the future to understand the rationale behind the two distinct strategies.
+
+## Part II C-Critical Engagement with AI: Chat GPT
+
+This study actively engaged with Chat GPT AI for code refinement and language fluidity. Originally, the code for handling the “Load More” button clicked the button directly, but Chat GPT suggested using the `tryCatch` function to prevent breaking the loop if it fails to catch and to add a sentence after clicking to indicate whether the action was successful. Additionally, though I was aware of it, Chat GPT helped confirm the correct code and split the score and enrollment data using `sequence` and `by`. During data wrangling, it used `\\d{4}` to extract the four-digit year-founded data and clarified the geocode function to obtain geographical coordinates. For the Shiny app design, Chat GPT helped set the height parameter to enlarge the plot and map for better visibility. It also avoided label overlaps and reversed the dot size scale by using `ggrepel` and `scale_size_continuous`. In the map output, Chat GPT assisted in adding information for overlapping points on the map. Finally, it helped fit the tab panel.
+
+However, issues still arose during engagement with Chat GPT, including mismatched methods between its suggestions and the lecture methods. Sometimes, the methods Chat GPT provided were overly complicated or advanced and not applicable to the study. As a result, it was time-consuming to adjust them to an appropriate level. On the other hand, this presented an opportunity to learn new methods and theoretical concepts, which can benefit the user by introducing new techniques that can be adopted in the future.
+
+## Reference List
+
+Horstschräer, J. (2012). University rankings in action? The importance of rankings and an excellence competition for university choice of high-ability students. *Economics of Education Review, 31*(6), 1162–1176. https://doi.org/10.1016/j.econedurev.2012.07.018
+
+Nye, J. S., Jr. (2010). The futures of American power: Dominance and decline in perspective. *Foreign Affairs, 89*(6), 2–12.

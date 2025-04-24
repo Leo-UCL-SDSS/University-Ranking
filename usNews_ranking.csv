@@ -1,0 +1,201 @@
+"rank","university","country","city","enrollment","score","abstract","numeric_rank","year_founded","location","lat","long"
+"#1","Harvard University","United States","Cambridge",20050,100,"Founded in 1636, Harvard University is the oldest higher education institution in the U.S. The bulk of Harvard's... Read More",1,1636,"Cambridge , United States",42.3656347,-71.1040018
+"#2","Massachusetts Institute of Technology (MIT)","United States","Cambridge",11085,96.9,"Massachusetts Institute of Technology, founded in 1861, is located in Cambridge, Massachusetts, near Boston. Around... Read More",2,1861,"Cambridge , United States",42.3656347,-71.1040018
+"#3","Stanford University","United States","Stanford",14517,94.5,"Stanford University was founded in 1885 and is located in California’s Bay Area, around 30 miles south of San Francisco... Read More",3,1885,"Stanford , United States",37.427467,-122.1702445
+"#4","University of Oxford","United Kingdom","Oxford",NA,88.2,"The exact date of the University of Oxford’s founding is unknown, but the school traces its roots back to at least 1096... Read More",4,1096,"Oxford , United Kingdom",51.7520131,-1.2578499
+"#5","University of California Berkeley","United States","Berkeley",39991,87.2,"The University of California—Berkeley is situated roughly 15 miles from San Francisco in what is known as the Bay Area... Read More",5,NA,"Berkeley , United States",37.8708393,-122.272863
+"#6","University of Cambridge","United Kingdom","Cambridge",20870,86.9,"The University of Cambridge, located around 60 miles north of London, traces its history back to 1209. Around 19,000... Read More",6,1209,"Cambridge , United Kingdom",52.2055314,0.1186637
+"#7","University College London","United Kingdom","London",41195,86.5,"University College London, or UCL, is a public institution that was founded in 1826. It was the third university... Read More",7,1826,"London , United Kingdom",51.5074456,-0.1277653
+"#7","University of Washington Seattle","United States","Seattle",49485,86.5,"The University of Washington is a public institution that was founded in 1861. The school's oldest and largest campus in... Read More",7,1861,"Seattle , United States",47.6038321,-122.330062
+"#9","Columbia University","United States","New York City",25914,86.4,"Columbia University is a private institution that was founded in 1754. It is located in the Upper West Side of New York... Read More",9,1754,"New York City , United States",40.7127281,-74.0060152
+"#10","Yale University","United States","New Haven",11923,86,"Yale University was founded in 1701, making it one of the oldest institutions of higher education in the U.S. The... Read More",10,1701,"New Haven , United States",41.3082138,-72.9250518
+"#11","University of California Los Angeles","United States","Los Angeles",43504,85.5,"The University of California—Los Angeles, commonly referred to as UCLA, is a public institution that was founded in... Read More",11,NA,"Los Angeles , United States",34.0536909,-118.242766
+"#12","Imperial College London","United Kingdom","London",20190,85.3,"Imperial College London is a public institution that was founded in 1907. The university was previously a college of the... Read More",12,1907,"London , United Kingdom",51.5074456,-0.1277653
+"#13","Johns Hopkins University","United States","Baltimore",18835,85.2,"Johns Hopkins University is a private institution that was founded in 1876. The school has campuses located in and... Read More",13,1876,"Baltimore , United States",39.2908816,-76.610759
+"#14","University of Pennsylvania","United States","Philadelphia",21312,84.7,"The University of Pennsylvania, also known as Penn, was founded in 1740. The private, Ivy League institution is located... Read More",14,1740,"Philadelphia , United States",39.9527237,-75.1635262
+"#15","University of California San Francisco","United States","San Francisco",NA,84.5,"The University of California—San Francisco is a public institution that was founded in 1864. The health sciences-focused... Read More",15,1864,"San Francisco , United States",37.7792588,-122.4193286
+"#16","Tsinghua University","China","Beijing",NA,84.4,"Tsinghua University, located in northwest Beijing, China, is a public institution that traces its roots back to 1911... Read More",16,1911,"Beijing , China",40.190632,116.412144
+"#17","University of Toronto","Canada","Toronto",79282,84.3,"The University of Toronto is a public institution that was founded in 1827. Around 80 percent of its students study at... Read More",17,1827,"Toronto , Canada",43.6534817,-79.3839347
+"#18","Princeton University","United States","Princeton",NA,83.9,"Princeton University was founded in 1746, making it one of the oldest higher education institutions in the U.S. The... Read More",18,1746,"Princeton , United States",40.3496953,-74.6597376
+"#19","Cornell University","United States","Ithaca",23620,83.7,"Cornell University is a private institution that was founded in 1865. The Ivy League school is located in Ithaca, New... Read More",19,1865,"Ithaca , United States",42.4374175,-76.5483723513926
+"#19","University of Michigan","United States","Ann Arbor",45783,83.7,"The University of Michigan—Ann Arbor is a public institution that was founded in 1817 and made the city of Ann Arbor its... Read More",19,1817,"Ann Arbor , United States",42.2813722,-83.7484616
+"#21","University of California San Diego","United States","La Jolla",NA,83.6,"The University of California—San Diego is a public institution that was established in 1960. It is located in the La... Read More",21,1960,"La Jolla , United States",32.8401623,-117.2740777
+"#22","National University of Singapore","Singapore","Singapore",33334,83.5,"Read More",22,NA,"Singapore , Singapore",1.357107,103.8194992
+"#23","California Institute of Technology","United States","Pasadena",2240,83.4,"The California Institute of Technology, known as Caltech, was founded in 1891 as Throop University and received its... Read More",23,1891,"Pasadena , United States",34.1476507,-118.144155
+"#24","Northwestern University","United States","Evanston",18417,81.8,"Northwestern University is a private institution that was founded in 1851. The university has three campuses – the main... Read More",24,1851,"Evanston , United States",42.0470043,-87.6846053
+"#25","University of Chicago","United States","Chicago",15792,81.5,"The University of Chicago is a private institution that was founded in 1890. The university is located in Chicago... Read More",25,1890,"Chicago , United States",41.8755616,-87.6244212
+"#26","Duke University","United States","Durham",NA,81,"Duke University traces its roots back to 1838, though the private institution didn’t receive its current name until... Read More",26,1838,"Durham , United States",35.996653,-78.9018053
+"#27","Nanyang Technological University","Singapore","Singapore",25895,80.9,"Read More",27,NA,"Singapore , Singapore",1.357107,103.8194992
+"#27","University of Melbourne","Australia","Parkville",NA,80.9,"The University of Melbourne is a public institution that was founded in 1853. The university has seven campuses... Read More",27,1853,"Parkville , Australia",-37.7871148,144.9515533
+"#29","University of Sydney","Australia","Sydney",58853,80.6,"The University of Sydney was founded in 1850, making it the oldest university in Australia. The public institution is... Read More",29,1850,"Sydney , Australia",-33.8698439,151.2082848
+"#30","Washington University (WUSTL)","United States","St. Louis",14184,80.2,"Washington University in St. Louis, also known as Wash U, is a private institution that was founded in 1853. The... Read More",30,1853,"St. Louis , United States",38.6280278,-90.1910154
+"#31","Peking University","China","Beijing",33064,79.7,"Peking University is a public institution that was founded in 1898, though it wasn't known by its current name until... Read More",31,1898,"Beijing , China",40.190632,116.412144
+"#32","New York University","United States","New York City",48461,79.5,"New York University, also known as NYU, is a private university that was founded in 1831. The university's main campus... Read More",32,1831,"New York City , United States",40.7127281,-74.0060152
+"#33","ETH Zurich","Switzerland","Zurich",22219,79.4,"Read More",33,NA,"Zurich , Switzerland",47.3744489,8.5410422
+"#33","University of Amsterdam","Netherlands","Amsterdam",NA,79.4,"The University of Amsterdam is a public institution that traces its roots back to 1632. The university is spread across... Read More",33,1632,"Amsterdam , Netherlands",52.3730796,4.8924534
+"#35","Monash University","Australia","Clayton",58460,79.3,"Monash University is a public institution that was established in 1958. It is located in the state of Victoria in... Read More",35,1958,"Clayton , Australia",-37.9142211,145.1268559
+"#36","King's College London","United Kingdom","London",NA,79.2,"Read More",36,NA,"London , United Kingdom",51.5074456,-0.1277653
+"#36","University of New South Wales Sydney","Australia","Kensington",47044,79.2,"Read More",36,NA,"Kensington , Australia",-33.9117191,151.2195058
+"#38","University of Edinburgh","United Kingdom","Edinburgh",NA,78.2,"The University of Edinburgh is a public institution that was founded in 1583. It is spread across five campuses in... Read More",38,1583,"Edinburgh , United Kingdom",55.9533456,-3.1883749
+"#39","University of British Columbia","Canada","Vancouver",60532,78,"The University of British Columbia is a public institution located in the Canadian province of British Columbia. The... Read More",39,NA,"Vancouver , Canada",49.2608724,-123.113952
+"#40","Icahn School of Medicine at Mount Sinai","United States","New York City",NA,77.8,"Read More",40,NA,"New York City , United States",40.7127281,-74.0060152
+"#41","University of Queensland","Australia","Brisbane",42847,77.6,"The University of Queensland Australia is a public institution that was established in 1909. It is located in and around... Read More",41,1909,"Brisbane , Australia",-27.4689682,153.0234991
+"#42","Chinese University of Hong Kong","Hong Kong","Shatin",18290,77.5,"Read More",42,NA,"Shatin , Hong Kong",22.3815527,114.1904697
+"#43","Universite Paris Cite","France","Paris",NA,77.3,"Read More",43,NA,"Paris , France",48.8588897,2.32004102172008
+"#44","University of Copenhagen","Denmark","Copenhagen",NA,76.9,"Read More",44,NA,"Copenhagen , Denmark",55.6867243,12.5700724
+"#44","University of Hong Kong","Hong Kong","Pok Fu Lam",18103,76.9,"Read More",44,NA,"Pok Fu Lam , Hong Kong",22.2613585,114.1368109
+"#46","Utrecht University","Netherlands","Utrecht",NA,76.8,"Utrecht University is a public institution that was founded in 1636. It is located in the city of Utrecht in the... Read More",46,1636,"Utrecht , Netherlands",52.0907006,5.1215634
+"#47","University of North Carolina Chapel Hill","United States","Chapel Hill",30921,76.7,"University of North Carolina—Chapel Hill is a public institution that was founded in 1789. It has a total undergraduate... Read More",47,1789,"Chapel Hill , United States",35.9131542,-79.05578
+"#48","Humboldt University of Berlin","Germany","Berlin",NA,76.3,"Humboldt-Universität zu Berlin is a public institution in Germany that was founded in 1810. The university’s campuses... Read More",48,1810,"Berlin , Germany",52.510885,13.3989367
+"#48","KU Leuven","Belgium","Leuven",49434,76.3,"Read More",48,NA,"Leuven , Belgium",50.879202,4.7011675
+"#50","University of Pittsburgh","United States","Pittsburgh",26304,76.2,"Read More",50,NA,"Pittsburgh , United States",40.4416941,-79.9900861
+"#51","Karolinska Institutet","Sweden","Stockholm",8085,75.6,"The Karolinska Institute is a public institution that was founded in 1810 as a school for army surgeons. It is located... Read More",51,1810,"Stockholm , Sweden",59.3251172,18.0710935
+"#51","Zhejiang University","China","Hangzhou",48169,75.6,"Zhejiang University is a public institution that traces its roots back to 1897. The university is located in Hangzhou... Read More",51,1897,"Hangzhou , China",30.2489634,120.2052342
+"#53","University of Munich","Germany","Munich",NA,75.5,"The University of Munich is a public institution that traces its roots back to 1472. It is situated in Munich – the... Read More",53,1472,"Munich , Germany",48.1371079,11.5753822
+"#54","Shanghai Jiao Tong University","China","Shanghai",38472,75.4,"Read More",54,NA,"Shanghai , China",31.2312707,121.4700152
+"#55","Ruprecht Karls University Heidelberg","Germany","Heidelberg",19315,75.3,"Heidelberg University is a public institution that was founded in 1386, earning it the title of Germany's oldest... Read More",55,1386,"Heidelberg , Germany",49.4093582,8.694724
+"#56","Leiden University","Netherlands","Leiden",NA,75.2,"Leiden University is a public institution that was founded in 1575, making it the oldest university in the Netherlands... Read More",56,1575,"Leiden , Netherlands",52.1594747,4.4908843
+"#56","McGill University","Canada","Montreal",30820,75.2,"McGill University is a public institution that was founded in 1821 and is located in Quebec, Canada. The university has... Read More",56,1821,"Montreal , Canada",45.5031824,-73.5698065
+"#56","Sorbonne Universite","France","Paris",41527,75.2,"Read More",56,NA,"Paris , France",48.8588897,2.32004102172008
+"#56","University of Texas Austin","United States","Austin",NA,75.2,"Read More",56,NA,"Austin , United States",30.2711286,-97.7436995
+"#60","University of Zurich","Switzerland","Zurich",25796,75,"Read More",60,NA,"Zurich , Switzerland",47.3744489,8.5410422
+"#61","Ohio State University","United States","Columbus",55537,74.9,"Read More",61,NA,"Columbus , United States",39.9622601,-83.0007065
+"#61","University of Glasgow","United Kingdom","Glasgow",32330,74.9,"Read More",61,NA,"Glasgow , United Kingdom",55.861155,-4.2501687
+"#63","Emory University","United States","Atlanta",13127,74.7,"Read More",63,NA,"Atlanta , United States",33.7489924,-84.3902644
+"#63","University of Minnesota Twin Cities","United States","Minneapolis",44770,74.7,"Read More",63,NA,"Minneapolis , United States",44.9772995,-93.2654692
+"#63","Vanderbilt University","United States","Nashville",NA,74.7,"Read More",63,NA,"Nashville , United States",36.1622767,-86.7742984
+"#66","Free University of Berlin","Germany","Berlin",NA,74.6,"The Free University of Berlin is a public institution that was founded in 1948. The university has three main campuses... Read More",66,1948,"Berlin , Germany",52.510885,13.3989367
+"#67","Hong Kong Polytechnic University","Hong Kong","Kowloon",20033,74.5,"Read More",67,NA,"Kowloon , Hong Kong",22.3031874,114.1820106
+"#67","University of Manchester","United Kingdom","Manchester",41180,74.5,"Read More",67,NA,"Manchester , United Kingdom",53.4794892,-2.2451148
+"#69","University of Chinese Academy of Sciences, CAS","China","Beijing",NA,74.4,"Read More",69,NA,"Beijing , China",40.190632,116.412144
+"#70","Erasmus University Rotterdam","Netherlands","Rotterdam",NA,74.3,"Erasmus University Rotterdam is a public institution that traces its roots back to 1913. However, the university did not... Read More",70,1913,"Rotterdam , Netherlands",51.9244424,4.47775
+"#70","Georgia Institute of Technology","United States","Atlanta",32078,74.3,"Read More",70,NA,"Atlanta , United States",33.7489924,-84.3902644
+"#72","University of Maryland College Park","United States","College Park",33988,74.2,"Read More",72,NA,"College Park , United States",38.980666,-76.9369189
+"#73","Boston University","United States","Boston",26677,73.8,"Read More",73,NA,"Boston , United States",42.3554334,-71.060511
+"#74","King Abdulaziz University","Saudi Arabia","Jeddah",NA,73.7,"Read More",74,NA,"Jeddah , Saudi Arabia",21.5504432,39.1742363
+"#74","University of Wisconsin Madison","United States","Madison",41209,73.7,"The University of Wisconsin—Madison, founded in 1848, is a public university located in the U.S. Midwest. Madison is the... Read More",74,1848,"Madison , United States",43.074761,-89.3837613
+"#76","Universite Paris Saclay","France","Saint-Aubin",NA,73.6,"Read More",76,NA,"Saint-Aubin , France",50.4573687,1.6651851
+"#76","University of Groningen","Netherlands","Groningen",31942,73.6,"The University of Groningen is a public institution that was founded in 1614, making it one of the oldest universities... Read More",76,1614,"Groningen , Netherlands",53.2190652,6.5680077
+"#78","Vrije Universiteit Amsterdam","Netherlands","Amsterdam",NA,73.5,"VU University Amsterdam is a public institution that was founded in 1880. The Dutch university is located in the Zuidas... Read More",78,1880,"Amsterdam , Netherlands",52.3730796,4.8924534
+"#79","City University of Hong Kong","Hong Kong","Kowloon",9076,73.4,"Read More",79,NA,"Kowloon , Hong Kong",22.3031874,114.1820106
+"#79","University of Barcelona","Spain","Barcelona",44365,73.4,"The University of Barcelona is a public institution that was founded in 1450. The urban university has multiple campuses... Read More",79,1450,"Barcelona , Spain",41.3828939,2.1774322
+"#79","University of Southern California","United States","Los Angeles",40549,73.4,"Read More",79,NA,"Los Angeles , United States",34.0536909,-118.242766
+"#82","Technical University of Munich","Germany","Munich",35505,73.2,"The Technical University of Munich, sometimes called TUM, is a public institution that was founded in 1868. The... Read More",82,1868,"Munich , Germany",48.1371079,11.5753822
+"#82","University of Science & Technology of China, CAS","China","Hefei",20252,73.2,"The University of Science and Technology of China is a public university that the Chinese Academy of Sciences founded in... Read More",82,NA,"Hefei , China",31.8665676,117.281428
+"#84","University of Tokyo","Japan","Tokyo",26345,73.1,"The University of Tokyo, also known as UTokyo or Todai, is a Japanese national university that was founded in 1877. The... Read More",84,1877,"Tokyo , Japan",35.6768601,139.7638947
+"#85","Australian National University","Australia","Canberra",17293,73,"The Australian National University was founded in 1946. The public institution’s main Acton Campus is located in... Read More",85,1946,"Canberra , Australia",-35.2975906,149.1012676
+"#85","Fudan University","China","Shanghai",38101,73,"Fudan University is a public institution that was founded in 1905. The university is located in Shanghai, China, and is... Read More",85,1905,"Shanghai , China",31.2312707,121.4700152
+"#85","University of Technology Sydney","Australia","Ultimo",NA,73,"Read More",85,NA,"Ultimo , Australia",-33.8794728,151.1984346
+"#88","Ecole Polytechnique Federale de Lausanne","Switzerland","Lausanne",12543,72.8,"Read More",88,NA,"Lausanne , Switzerland",46.5218269,6.6327025
+"#89","University of California Davis","United States","Davis",NA,72.7,"Read More",89,NA,"Davis , United States",40.7474784,-92.3965311
+"#89","University of California Santa Barbara","United States","Santa Barbara",25540,72.7,"The University of California—Santa Barbara, or UCSB, is a public university that traces its roots back to 1891. The... Read More",89,1891,"Santa Barbara , United States",34.4221319,-119.702667
+"#91","University of Western Australia","Australia","Crawley",19381,72.6,"Read More",91,NA,"Crawley , Australia",-31.9746305,115.8175988
+"#92","Queen Mary University London","United Kingdom","London",NA,72.5,"Read More",92,NA,"London , United Kingdom",51.5074456,-0.1277653
+"#92","University of Adelaide","Australia","Adelaide",23791,72.5,"Read More",92,NA,"Adelaide , Australia",-34.9281805,138.5999312
+"#94","Rockefeller University","United States","New York City",255,72.4,"Read More",94,NA,"New York City , United States",40.7127281,-74.0060152
+"#94","University of Birmingham","United Kingdom","Birmingham",33430,72.4,"Read More",94,NA,"Birmingham , United Kingdom",52.4796992,-1.9026911
+"#96","Pennsylvania State University","United States","University Park",45875,72.3,"Read More",96,NA,"University Park , United States",41.4400344,-87.683377
+"#96","University of Bristol","United Kingdom","Bristol",NA,72.3,"Read More",96,NA,"Bristol , United Kingdom",51.4538022,-2.5972985
+"#98","Nanjing University","China","Nanjing",36711,72,"Read More",98,NA,"Nanjing , China",32.0438284,118.7788631
+"#98","University of Colorado Boulder","United States","Boulder",35844,72,"Read More",98,NA,"Boulder , United States",40.0149856,-105.270545
+"#100","Huazhong University of Science & Technology","China","Wuhan",57663,71.9,"Read More",100,NA,"Wuhan , China",30.5951051,114.2999353
+"#100","King Abdullah University of Science & Technology","Saudi Arabia","Thuwal",NA,71.9,"Read More",100,NA,"Thuwal , Saudi Arabia",22.2833454,39.1128145
+"#100","University of California Irvine","United States","Irvine",35674,71.9,"Read More",100,NA,"Irvine , United States",33.6856969,-117.825981
+"#100","University of Illinois Urbana-Champaign","United States","Champaign",49212,71.9,"Read More",100,NA,"Champaign , United States",40.1164841,-88.2430932
+"#104","University of Oslo","Norway","Oslo",NA,71.8,"Read More",104,NA,"Oslo , Norway",59.9133301,10.7389701
+"#105","Hong Kong University of Science & Technology","Hong Kong","Hong Kong",9794,71.6,"Read More",105,NA,"Hong Kong , Hong Kong",22.2793278,114.1628131
+"#106","Sun Yat Sen University","China","Guangzhou",61453,71.4,"Read More",106,NA,"Guangzhou , China",23.1301964,113.2592945
+"#106","University of Florida","United States","Gainesville",48113,71.4,"Read More",106,NA,"Gainesville , United States",29.6519684,-82.3249846
+"#108","Wuhan University","China","Wuhan",NA,71.3,"Read More",108,NA,"Wuhan , China",30.5951051,114.2999353
+"#109","Ghent University","Belgium","Gent",41487,71.2,"Read More",109,NA,"Gent , Belgium",51.0538286,3.7250121
+"#109","University of Texas Southwestern Medical Center Dallas","United States","Dallas",NA,71.2,"Read More",109,NA,"Dallas , United States",32.7762719,-96.7968559
+"#111","University of Bern","Switzerland","Bern",12383,71,"Read More",111,NA,"Bern , Switzerland",46.9484742,7.4521749
+"#112","Universite PSL","France","Paris",16120,70.8,"Read More",112,NA,"Paris , France",48.8588897,2.32004102172008
+"#113","University of Helsinki","Finland","Helsinki",NA,70.7,"Read More",113,NA,"Helsinki , Finland",60.1674881,24.9427473
+"#113","Wageningen University & Research","Netherlands","Wageningen",15899,70.7,"Read More",113,NA,"Wageningen , Netherlands",51.9663016,5.6662814
+"#115","University of Arizona","United States","Tucson",39209,70.1,"Read More",115,NA,"Tucson , United States",32.2228765,-110.974847
+"#116","University of Cape Town","South Africa","Cape Town",21961,70,"Read More",116,NA,"Cape Town , South Africa",-33.9288301,18.4172197
+"#117","Aarhus University","Denmark","Aarhus",26996,69.8,"Read More",117,NA,"Aarhus , Denmark",56.1496278,10.2134046
+"#117","Radboud University Nijmegen","Netherlands","Nijmegen",23004,69.8,"Read More",117,NA,"Nijmegen , Netherlands",51.8474946,5.8637771
+"#119","Hunan University","China","Changsha",NA,69.7,"Read More",119,NA,"Changsha , China",28.1450774,113.2384362
+"#119","University of Geneva","Switzerland","Geneva",NA,69.7,"Read More",119,NA,"Geneva , Switzerland",46.2017559,6.1466014
+"#121","London School of Hygiene & Tropical Medicine","United Kingdom","London",NA,69.6,"Read More",121,NA,"London , United Kingdom",51.5074456,-0.1277653
+"#122","University of Exeter","United Kingdom","Exeter",27710,69.4,"Read More",122,NA,"Exeter , United Kingdom",50.7256138,-3.5269209
+"#123","Michigan State University","United States","East Lansing",44514,69.3,"Read More",123,NA,"East Lansing , United States",42.7320307,-84.4721678
+"#123","University of Southampton","United Kingdom","Southampton",NA,69.3,"Read More",123,NA,"Southampton , United Kingdom",50.9025349,-1.404189
+"#125","Lund University","Sweden","Lund",NA,69.2,"Lund University is a public institution that was founded in 1666. Its main campus is in Lund, Sweden, with additional... Read More",125,1666,"Lund , Sweden",55.7029296,13.1929449
+"#125","University of Virginia","United States","Charlottesville",NA,69.2,"Read More",125,NA,"Charlottesville , United States",38.029306,-78.4766781
+"#127","McMaster University","Canada","Hamilton",28254,69.1,"McMaster University is a public institution that was founded in 1887. The Canadian university's main campus is in a... Read More",127,1887,"Hamilton , Canada",43.2560802,-79.8728583
+"#127","Universidade de Sao Paulo","Brazil","Sao Paulo",83182,69.1,"Read More",127,NA,"Sao Paulo , Brazil",-23.5506507,-46.6333824
+"#129","University of California Santa Cruz","United States","Santa Cruz",19161,69,"The University of California—Santa Cruz, or UCSC, is a public institution that was founded in 1965. The school is... Read More",129,1965,"Santa Cruz , United States",37.050096,-121.99059
+"#130","University of Bologna","Italy","Bologna",NA,68.8,"The University of Bologna is a public institution that traces its roots back to 1088. In a recent year, around 85,000... Read More",130,1088,"Bologna , Italy",44.4938203,11.3426327
+"#130","University of Padua","Italy","Padua",44401,68.8,"The University of Padua is a public institution that was founded in 1222. It is located in the city of Padua, in... Read More",130,1222,"Padua , Italy",45.4077172,11.8734455
+"#132","University of Auckland","New Zealand","Auckland",35663,68.7,"Read More",132,NA,"Auckland , New Zealand",-36.852095,174.7631803
+"#133","Autonomous University of Barcelona","Spain","Barcelona",32901,68.6,"The Autonomous University of Barcelona is a public institution that was founded in 1968. The university, also known as... Read More",133,1968,"Barcelona , Spain",41.3828939,2.1774322
+"#134","Carnegie Mellon University","United States","Pittsburgh",NA,68.5,"Read More",134,NA,"Pittsburgh , United States",40.4416941,-79.9900861
+"#135","Indiana University Bloomington","United States","Bloomington",NA,68.4,"Read More",135,NA,"Bloomington , United States",39.1670396,-86.5342881
+"#135","Seoul National University (SNU)","South Korea","Seoul",28619,68.4,"Seoul National University was founded in 1946. The South Korean national university’s main location is the Gwanak campus... Read More",135,1946,"Seoul , South Korea",37.5666791,126.9782914
+"#137","Baylor College of Medicine","United States","Houston",NA,68.3,"Read More",137,NA,"Houston , United States",29.7589382,-95.3676974
+"#137","University of Liverpool","United Kingdom","Liverpool",26560,68.3,"Read More",137,NA,"Liverpool , United Kingdom",53.4071991,-2.99168
+"#137","Weizmann Institute of Science","Israel","Rehovot",NA,68.3,"Read More",137,NA,"Rehovot , Israel",31.8952532,34.8105616
+"#140","Sapienza University Rome","Italy","Rome",60522,68.2,"Sapienza University of Rome is a public institution that was founded in 1303 by Pope Boniface VIII. The Italian... Read More",140,1303,"Rome , Italy",41.8933203,12.4829321
+"#141","University of Leeds","United Kingdom","Leeds",NA,68.1,"Read More",141,NA,"Leeds , United Kingdom",53.7974185,-1.5437941
+"#142","King Saud University","Saudi Arabia","Riyadh",32881,68,"Read More",142,NA,"Riyadh , Saudi Arabia",23.333333,45.333333
+"#142","Swinburne University of Technology","Australia","Hawthorn",14324,68,"Read More",142,NA,"Hawthorn , Australia",-37.8244246,145.0317207
+"#142","University of Colorado Anschutz Medical Campus","United States","Aurora",NA,68,"Read More",142,NA,"Aurora , United States",41.7571701,-88.3147539
+"#142","University of Nottingham","United Kingdom","Nottingham",33985,68,"Read More",142,NA,"Nottingham , United Kingdom",52.9534193,-1.1496461
+"#146","University of Hamburg","Germany","Hamburg",29240,67.9,"Read More",146,NA,"Hamburg , Germany",53.550341,10.000654
+"#146","University of Milan","Italy","Milan",48990,67.9,"The University of Milan is a public institution that was founded in 1924. The Italian university’s main campus is... Read More",146,1924,"Milan , Italy",45.4641943,9.1896346
+"#148","Oregon Health & Science University","United States","Portland",NA,67.8,"Read More",148,NA,"Portland , United States",45.5202471,-122.674194
+"#148","Rutgers University New Brunswick","United States","Piscataway Township",46255,67.8,"Read More",148,NA,"Piscataway Township , United States",40.5462553,-74.4660408
+"#150","University of Alberta","Canada","Edmonton",33729,67.7,"The University of Alberta is a public institution that was founded in 1908. Located in the province of Alberta in... Read More",150,1908,"Edmonton , Canada",53.5462055,-113.491241
+"#150","University of Utah","United States","Salt Lake City",31501,67.7,"Read More",150,NA,"Salt Lake City , United States",40.7596198,-111.886797
+"#150","Uppsala University","Sweden","Uppsala",NA,67.7,"Uppsala University is a public institution that was founded in 1477. It is located primarily in Uppsala, Sweden, a city... Read More",150,1477,"Uppsala , Sweden",59.8586126,17.6387436
+"#153","Brown University","United States","Providence",9781,67.6,"Read More",153,NA,"Providence , United States",41.8239891,-71.4128343
+"#153","Stockholm University","Sweden","Stockholm",NA,67.6,"Stockholm University, located in and around Stockholm, is a public institution that was founded in 1878. The Frescati... Read More",153,1878,"Stockholm , Sweden",59.3251172,18.0710935
+"#153","Tongji University","China","Shanghai",31632,67.6,"Read More",153,NA,"Shanghai , China",31.2312707,121.4700152
+"#153","University of Electronic Science & Technology of China","China","Chengdu",37498,67.6,"Read More",153,NA,"Chengdu , China",30.6598628,104.0633717
+"#157","Southern University of Science & Technology","China","Shenzhen",6575,67.5,"Read More",157,NA,"Shenzhen , China",22.5445741,114.0545429
+"#157","University of Bonn","Germany","Bonn",NA,67.5,"The University of Bonn is a public institution that was founded in 1818. The university has facilities located... Read More",157,1818,"Bonn , Germany",50.7352621,7.1024635
+"#159","Newcastle University - UK","United Kingdom","Newcastle upon Tyne",26600,67.3,"Read More",159,NA,"Newcastle upon Tyne , United Kingdom",54.9738474,-1.6131572
+"#160","Case Western Reserve University","United States","Cleveland",10717,67.2,"Read More",160,NA,"Cleveland , United States",41.4996574,-81.6936772
+"#160","Harbin Institute of Technology","China","Harbin",NA,67.2,"Read More",160,NA,"Harbin , China",45.7593633,126.6276177
+"#160","University of Gothenburg","Sweden","Gothenburg",NA,67.2,"The University of Gothenburg is a public institution that was founded in 1954, although the roots of one of its... Read More",160,1954,"Gothenburg , Sweden",57.7072326,11.9670171
+"#160","University of Sheffield","United Kingdom","Sheffield",NA,67.2,"Read More",160,NA,"Sheffield , United Kingdom",53.3806626,-1.4702278
+"#164","Cankaya University","Turkey","Ankara",NA,67.1,"Read More",164,NA,"Ankara , Turkey",39.7160439,32.7059948
+"#164","Curtin University","Australia","Bentley",NA,67.1,"Read More",164,NA,"Bentley , Australia",-32.0084461,115.9065455
+"#164","University of Alabama Birmingham","United States","Birmingham",NA,67.1,"Read More",164,NA,"Birmingham , United States",33.5206824,-86.8024326
+"#167","Purdue University West Lafayette Campus","United States","West Lafayette",42633,67,"Read More",167,NA,"West Lafayette , United States",40.4258686,-86.9080655
+"#168","Central South University","China","Changsha",NA,66.9,"Read More",168,NA,"Changsha , China",28.1450774,113.2384362
+"#168","Kyoto University","Japan","Kyoto",NA,66.9,"Kyoto University is a Japanese national university that was founded in 1897. Originally known as Kyoto Imperial... Read More",168,1897,"Kyoto , Japan",35.021041,135.7556075
+"#168","University of Basel","Switzerland","Basel",NA,66.9,"Read More",168,NA,"Basel , Switzerland",47.5581077,7.5878261
+"#171","Texas A&M University College Station","United States","College Station",64426,66.8,"Read More",171,NA,"College Station , United States",30.6183939,-96.3455991
+"#172","University of Gottingen","Germany","Gottingen",23349,66.7,"Read More",172,NA,"Gottingen , Germany",51.5328328,9.9351811
+"#172","University of Warwick","United Kingdom","Coventry",25290,66.7,"Read More",172,NA,"Coventry , United Kingdom",52.4081812,-1.510477
+"#174","Universite de Montreal","Canada","Montreal",39935,66.6,"The University of Montreal is a public institution that traces its roots back to 1878. Initially a branch of the... Read More",174,1878,"Montreal , Canada",45.5031824,-73.5698065
+"#175","University of Lausanne","Switzerland","Lausanne",14479,66.5,"Read More",175,NA,"Lausanne , Switzerland",46.5218269,6.6327025
+"#175","University of Massachusetts Amherst","United States","Amherst",29255,66.5,"Read More",175,NA,"Amherst , United States",42.3731948,-72.5198761
+"#177","Deakin University","Australia","Burwood",40988,66.4,"Read More",177,NA,"Burwood , Australia",-33.8858088,151.102480473179
+"#177","Tel Aviv University","Israel","Tel Aviv",24995,66.4,"Read More",177,NA,"Tel Aviv , Israel",32.0852997,34.7818064
+"#179","Arizona State University-Tempe","United States","Tempe",48870,66.3,"Read More",179,NA,"Tempe , United States",33.4255117,-111.940016
+"#179","Beijing Institute of Technology","China","Beijing",34050,66.3,"Read More",179,NA,"Beijing , China",40.190632,116.412144
+"#179","Maastricht University","Netherlands","Maastricht",NA,66.3,"Read More",179,NA,"Maastricht , Netherlands",50.8512438,5.6909768
+"#179","Xi'an Jiaotong University","China","Xi'an",45955,66.3,"Read More",179,NA,"Xi'an , China",34.261004,108.9423363
+"#183","Southeast University - China","China","Nanjing",39653,66.2,"Read More",183,NA,"Nanjing , China",32.0438284,118.7788631
+"#184","Cardiff University","United Kingdom","Cardiff",NA,66.1,"Read More",184,NA,"Cardiff , United Kingdom",51.4816546,-3.1791934
+"#184","Queensland University of Technology (QUT)","Australia","Brisbane",37090,66.1,"Read More",184,NA,"Brisbane , Australia",-27.4689682,153.0234991
+"#184","Technical University of Denmark","Denmark","Kongens Lyngby",10410,66.1,"Read More",184,NA,"Kongens Lyngby , Denmark",55.7718649,12.5051413
+"#187","Delft University of Technology","Netherlands","Delft",NA,66,"Read More",187,NA,"Delft , Netherlands",51.9994572,4.362724538544
+"#187","Shenzhen University","China","Shenzhen",35736,66,"Read More",187,NA,"Shenzhen , China",22.5445741,114.0545429
+"#187","South China University of Technology","China","Guangzhou",40448,66,"Read More",187,NA,"Guangzhou , China",23.1301964,113.2592945
+"#187","University of Naples Federico II","Italy","Naples",NA,66,"Read More",187,NA,"Naples , Italy",40.8358846,14.2487679
+"#191","Nankai University","China","Nankai",31416,65.9,"Read More",191,NA,"Nankai , China",39.1370055,117.1439502
+"#192","Macquarie University","Australia","North Ryde",NA,65.8,"Read More",192,NA,"North Ryde , Australia",-33.7975472,151.127306
+"#192","University of Waterloo","Canada","Waterloo",36904,65.8,"The University of Waterloo is a public institution that was founded in 1957. The Canadian university's main campus is in... Read More",192,1957,"Waterloo , Canada",43.4652699,-80.5222961
+"#194","University of Leicester","United Kingdom","Leicester",NA,65.7,"Read More",194,NA,"Leicester , United Kingdom",52.6362,-1.1331969
+"#195","Royal Melbourne Institute of Technology (RMIT)","Australia","Melbourne",32574,65.6,"Read More",195,NA,"Melbourne , Australia",-37.8142454,144.9631732
+"#195","Tianjin University","China","Tianjin",NA,65.6,"Read More",195,NA,"Tianjin , China",39.3032619,117.4163641
+"#197","Eberhard Karls University of Tubingen","Germany","Tubingen",NA,65.5,"Read More",197,NA,"Tubingen , Germany",48.5203263,9.053596
+"#198","Xiamen University","China","Xiamen",NA,65.4,"Read More",198,NA,"Xiamen , China",24.5438732,118.0768065
+"#199","Aix-Marseille Universite","France","Marseille",72946,65.3,"Read More",199,NA,"Marseille , France",43.2961743,5.3699525
+"#199","University of Rochester","United States","Rochester",9855,65.3,"Read More",199,NA,"Rochester , United States",43.157285,-77.615214
